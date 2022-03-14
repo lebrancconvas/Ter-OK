@@ -1,10 +1,22 @@
 <script>
-	export let name;
+	let isLightTurnOn = true;
+	let statusLight = "ON";
+
+	const turn = () => {
+		isLightTurnOn = !isLightTurnOn;
+		if(isLightTurnOn) {
+		statusLight = "ON";
+	} else {
+		statusLight = "OFF";
+	}
+	}
 </script>
 
 <main>
 	<h1>Ter Ok</h1>
 	<p>I don't know what is on Ter Nawapol's mind, But are you still OK ?</p>
+	<h1>LIGHT: {statusLight}</h1>
+	<button on:click={turn}>Ter Nawapol, You should do something.</button>
 </main>
 
 <style>
